@@ -29,3 +29,9 @@ date = dt.date.today()
 # Creating list
 header = ['Title', 'Price', 'Date']
 data = [title, price, date]
+
+# create a csv file
+with open('AmzWebScraperDataSet.csv', 'w', newline='', encoding='utf8') as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
+    writer.writerow(data)
