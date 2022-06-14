@@ -23,3 +23,9 @@ soup2 = BeautifulSoup(soup1.prettify(), "html.parser")
 title = soup2.find(id='productTitle').get_text().strip()
 # target a specific html element with id and then select a child element 'span'
 price = soup2.find(id='corePrice_feature_div').select('span')[1].get_text().strip()[1:]
+# Date
+date = dt.date.today()
+
+# Creating list
+header = ['Title', 'Price', 'Date']
+data = [title, price, date]
