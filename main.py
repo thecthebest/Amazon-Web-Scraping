@@ -15,3 +15,7 @@ response = requests.get(URL, headers=headers)
 soup1 = BeautifulSoup(response.content, "html.parser")
 # making the response more readable
 soup2 = BeautifulSoup(soup1.prettify(), "html.parser")
+# extracting title and price information
+title = soup2.find(id='productTitle').get_text().strip()
+# target a specific html element with id and then select a child element 'span'
+price = soup2.find(id='corePrice_feature_div').select('span')[1].get_text().strip()[1:]
