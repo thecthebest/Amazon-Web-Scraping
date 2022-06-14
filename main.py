@@ -11,3 +11,7 @@ URL = 'https://www.amazon.co.uk/Levis-Classic-Twill-Baseball-Black/dp/B00FOI1JJ4
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36", "Accept-Encoding":"gzip, deflate", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "DNT":"1","Connection":"close", "Upgrade-Insecure-Requests":"1"}
 # sending the request
 response = requests.get(URL, headers=headers)
+# parsing the html page
+soup1 = BeautifulSoup(response.content, "html.parser")
+# making the response more readable
+soup2 = BeautifulSoup(soup1.prettify(), "html.parser")
